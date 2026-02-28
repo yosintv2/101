@@ -409,7 +409,7 @@
     </a>
 
     <div class="yosintv-wrapper">
-        <div class="yosintv-button">All Upcoming Events</div>
+        <div class="yosintv-button">All Cricket Events</div>
         <div class="yosintv-grid" id="cricket-events"></div>
     </div>
 
@@ -439,12 +439,15 @@
             container.appendChild(card);
         });
     }
-    fetch('https://yosintv2.github.io/yosintv.link/events-cricket.json')
+
+    // ✅ Changed from .json to .js
+    fetch('https://yosintv2.github.io/yosintv.link/events-cricket.js')
         .then(res => res.json())
         .then(data => displayEvents(data.matches, 'cricket-events'))
         .catch(e => console.error('Cricket Load Error'));
 
-    fetch('https://yosintv2.github.io/yosintv.link/events-football.json')
+    // ✅ Changed from .json to .js
+    fetch('https://yosintv2.github.io/yosintv.link/events-football.js')
         .then(res => res.json())
         .then(data => displayEvents(data.matches, 'football-events'))
         .catch(e => console.error('Football Load Error'));
@@ -523,14 +526,13 @@
     .yosintv-grid {
         display: grid;
         grid-template-columns: 1fr;
-        gap: 12px; /* Increased gap slightly for better shadow visibility */
+        gap: 12px;
         margin-bottom: 20px;
-        padding: 5px; /* Added padding so shadows aren't clipped */
+        padding: 5px;
     }
 
     .yosintv-card {
         background: #fff;
-        /* UPDATED: Added a more pronounced shadow */
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
         padding: 10px;
         display: flex;
@@ -539,10 +541,9 @@
         text-decoration: none;
         color: #111;
         border-radius: 8px;
-        transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth transition */
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
-    /* NEW: Hover effect for the shadow */
     .yosintv-card:hover {
         transform: translateY(-2px);
         box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
@@ -703,24 +704,23 @@
             const duration = (parseInt(m.duration) || 2) * 3600000;
             const end = start + duration;
 
-            let priority = 3; // default finished
+            let priority = 3;
             let sortValue = start;
 
             if (now >= start && now < end) {
-                priority = 1;           // LIVE - highest priority
-                sortValue = -start;     // most recent start time first (negative = newest on top)
+                priority = 1;
+                sortValue = -start;
             } else if (now < start) {
-                priority = 2;           // Upcoming
-                sortValue = start;      // soonest first
+                priority = 2;
+                sortValue = start;
             } else {
-                priority = 3;           // Finished
-                sortValue = end;        // oldest finished first
+                priority = 3;
+                sortValue = end;
             }
 
             return { ...m, priority, sortValue };
         });
 
-        // Sort: first by priority (LIVE > Upcoming > Finished), then by sortValue
         allMatches.sort((a, b) => {
             if (a.priority !== b.priority) return a.priority - b.priority;
             return a.sortValue - b.sortValue;
@@ -756,7 +756,6 @@
 
             sortAndRender(matchesArray);
 
-            // Live update every second
             updateIntervalId = setInterval(updateCountdownDisplay, 1000);
         } catch (e) {
             console.error(e);
@@ -769,26 +768,6 @@
 
 <!-- jQuery for fixed ad close -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    
-<!-- Fixed Bottom Ad
-  <div id='fixedban' class='fixed bottom-0 left-1/2 -translate-x-1/2 z-[999]'>
-    <div class='relative w-[300px] h-[250px] bg-white rounded-lg shadow-xl border border-gray-200'>
-      <button id='close-fixedban' class='absolute left-1/2 -translate-x-1/2 top-3 text-sm font-medium text-blue-600 hover:text-blue-800 transition-colors duration-200 cursor-pointer z-[1000]'>Close</button>
-      <div class='w-[300px] h-[250px] overflow-hidden pt-8'>
-        <ins class='adsbygoogle inline-block w-[300px] h-[250px]' data-ad-client='ca-pub-7981191925382455' data-ad-slot='8980702206'></ins>
-        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-      </div>
-    </div>
-  </div>
-<script>
-    $(document).ready(function() {
-        $('#close-fixedban').click(function() {
-            $('#fixedban').hide(90);
-        });
-    });
-</script>
- -->
-    
 
 <!-- Telegram Popup -->
 <div class="tgx-popup-overlay" id="tgxPopup">
@@ -846,29 +825,6 @@
     <noscript><a href="https://www.supercounters.com/" style="visibility:hidden;">free online counter</a></noscript>
 </div>
 
-
-<script>
-    let timeLeft = 5;
-    const countdown = setInterval(() => {
-        timeLeft--;
-        document.getElementById('seconds').innerText = timeLeft;
-        if (timeLeft <= 0) {
-            clearInterval(countdown);
-            document.getElementById('countdown-timer').style.visibility = 'hidden';
-            const closeBtn = document.getElementById('close-popup-btn');
-            closeBtn.style.opacity = '1';
-            closeBtn.style.pointerEvents = 'auto';
-        }
-    }, 1000);
-
-    function closePopup() {
-        document.getElementById('download-popup-overlay').style.opacity = '0';
-        setTimeout(() => {
-            document.getElementById('download-popup-overlay').style.display = 'none';
-        }, 500);
-    }
-</script>
-
-    
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v67327c56f0bb4ef8b305cae61679db8f1769101564043" integrity="sha512-rdcWY47ByXd76cbCFzznIcEaCN71jqkWBBqlwhF1SY7KubdLKZiEGeP7AyieKZlGP9hbY/MhGrwXzJC/HulNyg==" data-cf-beacon='{"version":"2024.11.0","token":"5243eba8b920487aaf6c8ac211a9ad54","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 </body>
 </html>
