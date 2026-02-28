@@ -55,7 +55,7 @@
     /* ── Reset ── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body { font-family: var(--fb); background: var(--bg); color: var(--text); font-size: 16px; line-height: 1.6; transition: background .3s, color .3s; overflow-x: hidden; }
+    body { font-family: var(--fb); background: var(--bg); color: var(--text); font-size: 16px; line-height: 1.6; transition: background .3s, color .3s; overflow-x: hidden; padding-top: 66px; }
     img { max-width: 100%; height: auto; }
     a { color: inherit; }
 
@@ -83,8 +83,8 @@
     .nl:hover, .nl.active { color: #fff; border-bottom-color: var(--yellow); }
 
     /* ── Ad bar ── */
-    .adbar { max-width: 1140px; margin: 14px auto 0; padding: 0 1.25rem; text-align: center; }
-    .adbar-placeholder { background: var(--card); border: 2px dashed var(--border); border-radius: var(--rs); padding: 18px 18px; font-size: .78rem; color: var(--muted); font-family: var(--fd); letter-spacing: .05em; text-transform: uppercase; display: block; width: 100%; min-height: 56px; line-height: 1.6; }
+    .adbar { max-width: 1140px; margin: 18px auto 0; padding: 0 1.25rem; text-align: center; }
+    .adbar-placeholder { background: var(--card); border: 2px dashed var(--border); border-radius: var(--rs); padding: 18px; font-size: .78rem; color: var(--muted); font-family: var(--fd); letter-spacing: .05em; text-transform: uppercase; display: flex; align-items: center; justify-content: center; width: 100%; min-height: 60px; line-height: 1.6; }
 
     /* ── Main Grid ── */
     .yst-wrap { max-width: 1140px; margin: 20px auto 60px; padding: 0 1.25rem; display: grid; grid-template-columns: 1fr 308px; gap: 26px; align-items: start; }
@@ -773,7 +773,6 @@ fetchJSON(
 
     buildFilterPills();
     renderArticles();
-    renderSidebarLatest(allArticles);
     renderSidebarRecent(allArticles);
   },
   function () {
@@ -781,7 +780,6 @@ fetchJSON(
     document.getElementById('articles-container').innerHTML =
       '<div style="text-align:center;padding:40px;color:var(--muted);font-family:var(--fd);">' +
       '&#9888; Could not load <strong>data.json</strong>. Make sure the file exists in the same folder as this HTML file.</div>';
-    document.getElementById('sidebar-latest').innerHTML = '';
     document.getElementById('sidebar-recent').innerHTML = '';
   }
 );
