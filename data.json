@@ -1,0 +1,64 @@
+{
+  "articles": [
+    {
+      "id": 1,
+      "title": "India vs Australia T20 World Cup 2026 Playing XI Confirmed",
+      "snippet": "BCCI has officially confirmed the playing XI for India's opening match against Australia in the T20 World Cup 2026. Rohit Sharma will lead the side with Virat Kohli at number three.",
+      "image": "https://placehold.co/400x225/1d4ed8/ffffff?text=IND+vs+AUS",
+      "url": "#",
+      "date": "Feb 28, 2026",
+      "author": "YoSinTV",
+      "labels": ["Cricket", "Playing XI", "T20 World Cup"]
+    },
+    {
+      "id": 2,
+      "title": "Champions League Quarter-Final Draw: Real Madrid vs Manchester City",
+      "snippet": "The UEFA Champions League quarter-final draw has been completed. Real Madrid will face Manchester City in what promises to be a blockbuster clash at the Bernabeu.",
+      "image": "https://placehold.co/400x225/dc2626/ffffff?text=UCL+QF",
+      "url": "#",
+      "date": "Feb 27, 2026",
+      "author": "YoSinTV",
+      "labels": ["Football", "Champions League"]
+    },
+    {
+      "id": 3,
+      "title": "IPL 2026 Auction: Top 5 Players to Watch Out For",
+      "snippet": "The IPL 2026 mega auction is set to feature some exciting names. Here are the top 5 players who could break bank records and shake up team compositions across all franchises.",
+      "image": "https://placehold.co/400x225/f59e0b/ffffff?text=IPL+2026",
+      "url": "#",
+      "date": "Feb 26, 2026",
+      "author": "YoSinTV",
+      "labels": ["Cricket", "IPL"]
+    },
+    {
+      "id": 4,
+      "title": "Premier League Match Preview: Arsenal vs Chelsea — Predicted Lineups",
+      "snippet": "North London's finest take on the Blues at the Emirates this weekend. Both teams are in fine form heading into what promises to be a top-of-the-table classic.",
+      "image": "https://placehold.co/400x225/1e3a8a/ffffff?text=ARS+vs+CHE",
+      "url": "#",
+      "date": "Feb 25, 2026",
+      "author": "YoSinTV",
+      "labels": ["Football", "Match Preview", "Premier League"]
+    },
+    {
+      "id": 5,
+      "title": "Pakistan vs Bangladesh T20 Series: Match Schedule & Live Streaming Info",
+      "snippet": "Pakistan host Bangladesh for a three-match T20I series starting next week. Full match schedule, streaming details, and expected playing XI for both teams confirmed.",
+      "image": "https://placehold.co/400x225/10b981/ffffff?text=PAK+vs+BAN",
+      "url": "#",
+      "date": "Feb 24, 2026",
+      "author": "YoSinTV",
+      "labels": ["Cricket", "Match Preview"]
+    },
+    {
+      "id": 6,
+      "title": "La Liga: Barcelona's Tactics Under New Manager — Full Match Analysis",
+      "snippet": "Since the arrival of the new coach, Barcelona have transformed their pressing game. We break down the tactical changes and how they've impacted results in La Liga this season.",
+      "image": "https://placehold.co/400x225/7c3aed/ffffff?text=LA+LIGA",
+      "url": "#",
+      "date": "Feb 23, 2026",
+      "author": "YoSinTV",
+      "labels": ["Football", "La Liga"]
+    }
+  ]
+}
